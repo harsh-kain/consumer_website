@@ -1,5 +1,7 @@
 function App() {
-  return <div>Amrutam Pharmaceuticals</div>;
+  return (
+    <h1 className="text-3xl font-bold underline">Amrutam Pharmaceuticals</h1>
+  );
 }
 
 export default App;
