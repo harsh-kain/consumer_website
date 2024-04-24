@@ -11,12 +11,12 @@ const Header: FunctionComponent = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
           <div className="flex h-24 items-center justify-between">
             <div className="block flex-shrink-0 lg:hidden">
-              <img src="/src/assets/logo.svg" />
+              <img src="/logo.svg" />
             </div>
             <div className="hidden w-full lg:flex">
               <div className="flex w-full  flex-row items-center justify-around">
                 <nav className="flex  justify-between gap-5 lg:gap-16">
-                  <img src="/src/assets/logo.svg" />
+                  <img src="/logo.svg" />
                   <ul className=" hidden items-center gap-10 text-xl lg:flex">
                     <li className=" group font-dinpro-medium capitalize ">
                       <Link to={"/"}>Home</Link>

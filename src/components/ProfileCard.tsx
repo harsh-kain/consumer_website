@@ -10,7 +10,7 @@ const ProfileCard: FunctionComponent = () => {
             <img
               className="absolute left-[47px] top-[-126px] !m-[0] h-[150px] w-[149px]  rounded-[50%] object-cover"
               alt=""
-              src="/src/assets/ellipse-725@2x.png"
+              src="/ellipse-725@2x.png"
             />
             <button className="z-10 flex cursor-pointer  items-start gap-[4px]  overflow-hidden rounded-2xl bg-[transparent] px-3 py-1 [background:linear-gradient(180deg,_#0b0b0b,_rgba(11,_11,_11,_0.79))] [border:none]">
               <div className=" min-w-[22px] pt-0.5  font-dinpro-bold text-base leading-[18px]  text-white">
@@ -20,7 +20,7 @@ const ProfileCard: FunctionComponent = () => {
               <img
                 className=" h-5 min-h-[20px] w-5 shrink-0 overflow-hidden"
                 alt=""
-                src="/src/assets/materialsymbolsstar.svg"
+                src="/materialsymbolsstar.svg"
               />
             </button>
           </div>
@@ -36,7 +36,7 @@ const ProfileCard: FunctionComponent = () => {
                   className=" h-4 w-4 shrink-0 overflow-hidden"
                   loading="lazy"
                   alt=""
-                  src="/src/assets/frame.svg"
+                  src="/frame.svg"
                 />
                 <div className="   text-base leading-[20px]  text-dimgray-100">
                   Male-Female Infertility
@@ -46,7 +46,7 @@ const ProfileCard: FunctionComponent = () => {
                 <img
                   className=" h-6 w-6 shrink-0 overflow-hidden"
                   alt=""
-                  src="/src/assets/frame-1.svg"
+                  src="/hat.svg"
                 />
                 <div className="   text-base font-semibold leading-[20px]  text-dimgray-100">
                   7 years of Experience
@@ -57,7 +57,7 @@ const ProfileCard: FunctionComponent = () => {
                   className=" h-4 w-[18px] object-cover"
                   loading="lazy"
                   alt=""
-                  src="/src/assets/comment-1@2x.png"
+                  src="/comment-1@2x.png"
                 />
                 <div className="text-base leading-[20px]  text-dimgray-200">
                   Speaks: English, Hindi, Marathi

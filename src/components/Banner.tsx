@@ -18,7 +18,7 @@ const Banner = ({
       <img
         className="h-40 w-full overflow-hidden rounded-2xl  object-cover
       "
-        src="/src/assets/image-160@2x.png"
+        src="/image-160@2x.png"
         alt="background-image"
       />
       <div className="box-border flex min-h-[151px] w-full   -translate-y-7 flex-col items-center border-[1.8px]  border-solid border-slate-200 bg-mintcream-200 md:flex-row">
@@ -26,7 +26,7 @@ const Banner = ({
           <img
             className=" z-30  h-[159px] w-[159px] -translate-y-8 translate-x-8 rounded-[50%]  border-4 border-white bg-no-repeat object-cover"
             alt=""
-            src="src/assets/ellipse-727@2x.png"
+            src="/ellipse-727@2x.png"
           />
         </div>
 
@@ -37,11 +37,11 @@ const Banner = ({
                 {name}
               </h3>
               <div className="relative mb-0.5 h-5 w-5">
-                <img alt="" src="/src/assets/polygon-1.svg" />
+                <img alt="" src="/polygon-1.svg" />
                 <img
                   className="absolute left-[3px] top-[4px] z-[1] !m-[0] h-[13px] w-3.5 shrink-0 overflow-hidden text-white"
                   alt=""
-                  src="/src/assets/checkmark.svg"
+                  src="/checkmark.svg"
                 />
               </div>
             </div>
@@ -63,7 +63,7 @@ const Banner = ({
                       key={index}
                       className=" h-[22px] w-5 "
                       alt=""
-                      src="/src/assets/star.svg"
+                      src="/star.svg"
                     />
                   ))}
               </div>

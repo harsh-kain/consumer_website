@@ -34,7 +34,7 @@ const SearchBar: FunctionComponent = () => {
                     <img
                       className="relative h-6 min-h-[24px] w-6 shrink-0 overflow-hidden"
                       alt=""
-                      src="/src/assets/location.svg"
+                      src="/location.svg"
                     />
                     <div className=" relative inline-block min-w-[120px] text-center text-base leading-[24px] tracking-[0.01em] text-gray-200">
                       Select Location
@@ -90,7 +90,7 @@ const SearchBar: FunctionComponent = () => {
                 <img
                   className="relative h-6 min-h-[24px] w-7"
                   alt=""
-                  src="/src/assets/iconsarrow-forward-24px.svg"
+                  src="/iconsarrow-forward-24px.svg"
                 />
               </div>
             </div>

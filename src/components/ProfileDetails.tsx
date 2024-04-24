@@ -68,11 +68,7 @@ const ProfileDetails = ({
                 <div className="text-center font-poppins  text-[16px] text-base font-medium leading-[24px] text-dimgray-300">
                   Follow
                 </div>
-                <img
-                  className="h-3.5 w-3.5"
-                  alt="Add"
-                  src="/src/assets/group-39517.svg"
-                />
+                <img className="h-3.5 w-3.5" alt="Add" src="/group-39517.svg" />
               </button>
             </div>
 
@@ -88,7 +84,7 @@ const ProfileDetails = ({
                     <img
                       className="  max-w-full self-stretch "
                       alt=""
-                      src="src/assets/image-combiner.svg"
+                      src="/image-combiner.svg"
                     />
                   </div>
                   <button
@@ -122,7 +118,7 @@ const ProfileDetails = ({
                     <img
                       className="absolute bottom-[25%] left-[25%] right-[25%] top-[25%] z-[1] !m-[0] h-3/6 max-h-full w-6/12 max-w-full overflow-hidden"
                       alt={platform}
-                      src={`/src/assets/${platform}.svg`}
+                      src={`/${platform}.svg`}
                     />
                   </Link>
                 ))}
@@ -145,7 +141,7 @@ const ProfileDetails = ({
                         <img
                           className=" max-h-full w-[84px]  overflow-hidden object-cover"
                           alt=""
-                          src={`/src/assets/${item.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")}.svg`}
+                          src={`/${item.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")}.svg`}
                         />
                       </div>
                       <div className=" text-center  font-medium capitalize leading-[20px]">
@@ -201,7 +197,7 @@ const ProfileDetails = ({
                       <img
                         className=" h-6 w-6  overflow-hidden"
                         alt="Hospital Icon"
-                        src="/src/assets/hospital.svg"
+                        src="/hospital.svg"
                       />
                     </button>
                     <div className="flex flex-col items-start justify-center ">
@@ -225,14 +221,14 @@ const ProfileDetails = ({
             </div>
             <div className="box-border flex flex-col gap-6  px-[30px] py-0 ">
               {featuredReviews.map((featured) => (
-                <div className=" flex w-full  flex-col  gap-1  rounded-2xl bg-neutral-50 px-9 py-4 ">
+                <div className=" flex w-full  flex-col  gap-1  rounded-2xl bg-neutral-100 px-9 py-4 ">
                   <div className="mb-3 flex flex-col items-center  justify-between gap-3 md:flex-row">
                     <div className="flex flex-col items-center justify-start  gap-1 md:flex-row ">
                       <img
                         className="relative h-14 w-[54px] shrink-0 overflow-hidden rounded-[50%] object-cover"
                         loading="lazy"
                         alt="Profile Photo"
-                        src={`/src/assets/${featured.picture}`}
+                        src={`/${featured.picture}`}
                       />
                       <div className="flex flex-col items-center justify-center px-3 md:items-start">
                         <h3 className=" font-nunito text-[20px] font-semibold text-black">
@@ -255,7 +251,7 @@ const ProfileDetails = ({
                           key={index}
                           className=" h-[22px] w-5 "
                           alt=""
-                          src="/src/assets/star.svg"
+                          src="/star.svg"
                         />
                       ))}
                   </div>
@@ -313,11 +309,7 @@ const ProfileDetails = ({
             </span>
             <hr className=" mt-2 h-2 w-full border-neutral-300 " />
             <div className=" flex items-center justify-center rounded-[50%] border-[1px] border-solid border-gray-400 p-2 ">
-              <img
-                className="w-10"
-                alt="Calendar Icon"
-                src="/src/assets/calendar.svg"
-              />
+              <img className="w-10" alt="Calendar Icon" src="/calendar.svg" />
             </div>
           </div>
           <div className="mx-2 flex items-center justify-around gap-2 rounded-[21px] border-[1px] border-neutral-300 px-3 py-6 xl:px-8">
@@ -325,7 +317,7 @@ const ProfileDetails = ({
               className="relative h-5 w-5 object-contain"
               loading="lazy"
               alt=""
-              src="/src/assets/chevronleft.png"
+              src="/chevronleft.png"
             />
 
             <div className="no-scrollbar flex  gap-2  overflow-y-auto">
@@ -358,7 +350,7 @@ const ProfileDetails = ({
               className="relative h-5 w-5"
               loading="lazy"
               alt=""
-              src="/src/assets/chevronright.svg"
+              src="/chevronright.svg"
             />
           </div>
 
