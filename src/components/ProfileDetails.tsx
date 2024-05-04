@@ -64,7 +64,7 @@ const ProfileDetails = ({
               <h3 className=" pt-px font-nunito text-[24px] font-semibold ">
                 A Little About me
               </h3>
-              <button className="flex cursor-pointer  items-center  justify-center gap-[6.7px]  rounded-xl border-[1.5px] border-solid border-darkolivegreen-200 bg-white py-1 pl-[21px] pr-[19px] hover:scale-105 hover:bg-neutral-100">
+              <button className="flex cursor-pointer  items-center  justify-center gap-[6.7px]  rounded-xl border-[1.5px] border-solid border-darkolivegreen-200 bg-white py-1 pl-[21px] pr-[19px] duration-100 hover:scale-105 hover:bg-neutral-100 active:scale-95">
                 <div className="text-center font-poppins  text-[16px] text-base font-medium leading-[24px] text-dimgray-300">
                   Follow
                 </div>
@@ -89,7 +89,7 @@ const ProfileDetails = ({
                   </div>
                   <button
                     onClick={() => setShowLess((x) => !x)}
-                    className="whitespace-nowrap   font-poppins text-[16px] font-medium leading-[27px] text-gray-700  [text-decoration:underline] hover:-translate-y-1"
+                    className="whitespace-nowrap   font-poppins text-[16px] font-medium leading-[27px] text-gray-700  [text-decoration:underline] hover:font-semibold"
                   >
                     {!showLess ? "Read Less" : `Read More`}
                   </button>
@@ -101,7 +101,7 @@ const ProfileDetails = ({
                 <div className="flex flex-wrap items-center gap-4">
                   {languages &&
                     languages.map((language) => (
-                      <button className="bg-ghostWhite whitespace-nowrap  rounded-2xl  px-[19.5px] py-2.5 font-poppins text-lg   leading-[20px] tracking-[-0.01em] [border:none]">
+                      <button className="whitespace-nowrap rounded-2xl  bg-ghostWhite  px-[19.5px] py-2.5 font-poppins text-lg   leading-[20px] tracking-[-0.01em] [border:none]">
                         {language}
                       </button>
                     ))}
@@ -113,7 +113,7 @@ const ProfileDetails = ({
                   <Link
                     to={link}
                     key={platform}
-                    className=" bg-ghostWhite relative z-[1] box-border h-[40.6px] w-[40.6px] rounded-[50%] border-[1px] border-solid border-gray-300 hover:-translate-y-1  hover:bg-neutral-200"
+                    className=" relative z-[1] box-border h-[40.6px] w-[40.6px] rounded-[50%] border-[1px] border-solid border-gray-300 bg-ghostWhite duration-100  hover:-translate-y-1 hover:bg-neutral-200 active:scale-95"
                   >
                     <img
                       className="absolute bottom-[25%] left-[25%] right-[25%] top-[25%] z-[1] !m-[0] h-3/6 max-h-full w-6/12 max-w-full overflow-hidden"
@@ -137,7 +137,7 @@ const ProfileDetails = ({
                 {specializationList &&
                   specializationList.map((item) => (
                     <div className="flex h-[123px] flex-col items-center justify-start gap-[7px]">
-                      <div className="box-border flex   flex-col  items-center justify-center overflow-hidden rounded-xl border-[2px] border-solid border-whitesmoke-200 bg-mintcream-200 px-[7px] py-[9px]">
+                      <div className="box-border flex   flex-col  items-center justify-center overflow-hidden rounded-xl border-[2px] border-solid border-whitesmoke-200 bg-mintcream-200 px-[7px] py-[9px] duration-200 hover:border-neutral-300">
                         <img
                           className=" max-h-full w-[84px]  overflow-hidden object-cover"
                           alt=""
@@ -164,14 +164,14 @@ const ProfileDetails = ({
                 treatments
                   .slice(0, Number(treatmentsShowMore ? treatments.length : 6))
                   .map((item) => (
-                    <span className=" bg-ghostWhite box-border flex h-[43px] flex-row items-center justify-center  rounded-[19px] px-3 py-2.5 font-poppins  text-[16px] font-medium text-darkolivegreen-200">
+                    <span className=" box-border flex h-[43px] flex-row items-center justify-center rounded-[19px]  bg-ghostWhite px-3 py-2.5 font-poppins  text-[16px] font-medium text-darkolivegreen-200">
                       {item}
                     </span>
                   ))}
               {treatments.length > 6 && (
                 <button
                   onClick={() => setTreatmentsShowMore((x) => !x)}
-                  className=" box-border  flex h-[43px] flex-row items-center justify-center rounded-[19px]  border-[1.6px] border-solid border-slate-300 px-5 py-2.5 font-poppins  text-[16px] font-medium text-darkolivegreen-200 hover:scale-105 hover:bg-slate-50"
+                  className=" box-border  flex h-[43px] flex-row items-center justify-center rounded-[19px]  border-[1.6px] border-solid border-slate-300 px-5 py-2.5 font-poppins  text-[16px] font-medium text-darkolivegreen-200  duration-100 hover:bg-slate-50 active:scale-95"
                 >
                   {treatmentsShowMore
                     ? `Show Less`
@@ -191,15 +191,15 @@ const ProfileDetails = ({
               <h3 className="flex items-center text-left font-poppins text-[18px] font-semibold uppercase leading-[19.2px] text-darkolivegreen-200">{`I have been in practice for : ${workExperience.years} Years`}</h3>
               <hr className=" my-0.5 h-2 w-3/4 border-neutral-300 " />
               {workExperience.hospitals.map((hospital) => (
-                <div className="flex justify-between font-poppins">
-                  <div className="flex flex-1 flex-row items-center justify-start gap-3">
-                    <button className="bg-ghostWhite flex   overflow-hidden rounded-md p-3 [border:none]">
+                <div className="flex justify-between rounded-lg p-1 font-poppins hover:bg-neutral-50">
+                  <div className="flex flex-1 flex-row items-center justify-start gap-3 ">
+                    <div className="flex overflow-hidden   rounded-md bg-ghostWhite p-3 [border:none]">
                       <img
                         className=" h-6 w-6  overflow-hidden"
                         alt="Hospital Icon"
                         src="/hospital.svg"
                       />
-                    </button>
+                    </div>
                     <div className="flex flex-col items-start justify-center ">
                       <h4 className=" font-medium">{hospital.name}</h4>
                       <p className="text-neutral-400">{hospital.role}</p>
@@ -284,7 +284,7 @@ const ProfileDetails = ({
             {sessionMode &&
               sessionMode.map((session) => (
                 <div
-                  className={`hover:bg-lightolivegreen  flex flex-col items-center justify-center  rounded-xl border-[2px] py-3   hover:border-darkolivegreen-100 ${choosedSessionMode === session.type ? ` bg-lightolivegreen border-darkolivegreen-100` : `border-neutral-300`}`}
+                  className={`flex  cursor-pointer flex-col items-center justify-center  rounded-xl border-[2px] py-3  hover:border-darkolivegreen-100   hover:bg-lightolivegreen ${choosedSessionMode === session.type ? ` border-darkolivegreen-100 bg-lightolivegreen` : `border-neutral-300`}`}
                   key={session.type}
                   onClick={() => setChoosedSessionMode(session.type)}
                 >
@@ -321,7 +321,7 @@ const ProfileDetails = ({
             />
 
             <div className="no-scrollbar flex  gap-2  overflow-y-auto">
-              <div className="hover:bg-lightolivegreen flex flex-col items-center justify-center rounded-xl border-[1px] border-neutral-300 px-3 py-2 font-medium hover:border-darkolivegreen-200  hover:font-semibold hover:text-darkolivegreen-200">
+              <div className="flex flex-col items-center justify-center rounded-xl border-[1px] border-neutral-300 px-3 py-2 font-medium hover:border-darkolivegreen-200 hover:bg-lightolivegreen  hover:font-semibold hover:text-darkolivegreen-200">
                 <span className=" whitespace-nowrap font-inter text-[16px] tracking-[0.2px] ">
                   Mon, 10 Oct
                 </span>
@@ -329,7 +329,7 @@ const ProfileDetails = ({
                   10 slots
                 </span>
               </div>
-              <div className="hover:bg-lightolivegreen flex flex-col items-center justify-center rounded-xl border-[1px] border-neutral-300 px-4 py-2.5 font-medium hover:border-darkolivegreen-200  hover:font-semibold hover:text-darkolivegreen-200">
+              <div className="flex flex-col items-center justify-center rounded-xl border-[1px] border-neutral-300 px-4 py-2.5 font-medium hover:border-darkolivegreen-200 hover:bg-lightolivegreen  hover:font-semibold hover:text-darkolivegreen-200">
                 <span className="whitespace-nowrap  font-inter text-[16px] font-medium tracking-[0.2px]">
                   Tue, 11 Oct
                 </span>
@@ -337,7 +337,7 @@ const ProfileDetails = ({
                   02 slots
                 </span>
               </div>
-              <div className="hover:bg-lightolivegreen flex flex-col items-center justify-center rounded-xl border-[1px] border-neutral-300 px-3 py-2 font-medium hover:border-darkolivegreen-200   hover:font-semibold hover:text-darkolivegreen-200">
+              <div className="flex flex-col items-center justify-center rounded-xl border-[1px] border-neutral-300 px-3 py-2 font-medium hover:border-darkolivegreen-200 hover:bg-lightolivegreen   hover:font-semibold hover:text-darkolivegreen-200">
                 <span className="whitespace-nowrap font-inter text-[16px] tracking-[0.2px]">
                   Wed, 12 Oct
                 </span>
@@ -363,7 +363,7 @@ const ProfileDetails = ({
                 <div className=" flex flex-wrap gap-x-3 gap-y-4 ">
                   {slots.timing.map((time) => (
                     <span
-                      className={`hover:bg-lightolivegreen rounded-3xl border-[1px] border-neutral-300 px-3 py-6 text-center font-inter text-[15px] font-medium tracking-[0.2px] hover:border-darkolivegreen-200    hover:text-darkolivegreen-200 ${slotTime === time ? ` bg-darkolivegreen-200 text-white` : ``}`}
+                      className={`cursor-pointer rounded-3xl border-[1px] border-neutral-300 px-3 py-6 text-center font-inter text-[15px] font-medium tracking-[0.2px] duration-150 hover:border-darkolivegreen-200 hover:bg-lightolivegreen hover:text-darkolivegreen-200     active:scale-95 ${slotTime === time ? ` bg-darkolivegreen-200 text-white` : ``}`}
                       onClick={() => setSlotTime(time)}
                     >
                       {time}
@@ -373,7 +373,7 @@ const ProfileDetails = ({
               </div>
             ))}
           </div>
-          <button className=" mx-8 rounded-xl bg-darkolivegreen-200 py-3 font-inter text-[20px] font-medium capitalize text-white hover:bg-darkolivegreen-300">
+          <button className=" mx-8 rounded-xl bg-darkolivegreen-200 py-3 font-inter text-[20px] font-medium capitalize text-white duration-100 hover:bg-darkolivegreen-300 active:scale-95">
             Make an appointment
           </button>
         </div>

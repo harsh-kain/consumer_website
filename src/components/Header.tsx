@@ -11,33 +11,37 @@ const Header: FunctionComponent = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
           <div className="flex h-24 items-center justify-between">
             <div className="block flex-shrink-0 lg:hidden">
-              <img src="/logo.svg" />
+              <Link to={"/"}>
+                <img src="/logo.svg" />
+              </Link>
             </div>
             <div className="hidden w-full lg:flex">
               <div className="flex w-full  flex-row items-center justify-around">
                 <nav className="flex  justify-between gap-5 lg:gap-16">
-                  <img src="/logo.svg" />
+                  <Link to={"/"}>
+                    <img src="/logo.svg" />
+                  </Link>
                   <ul className=" hidden items-center gap-10 text-xl lg:flex">
-                    <li className=" group font-dinpro-medium capitalize ">
+                    <li className=" group font-dinpro-medium capitalize duration-200 active:scale-90 ">
                       <Link to={"/"}>Home</Link>
                       <span className="block h-0.5 max-w-0  rounded-full  bg-black transition-all  duration-500 ease-in-out  group-hover:max-w-full"></span>
                     </li>
-                    <li className="group font-dinpro-bold capitalize text-darkolivegreen-200    ">
+                    <li className="group cursor-pointer font-dinpro-bold capitalize text-darkolivegreen-200  duration-200 active:scale-90 ">
                       Find Doctors
                       <span className="block h-0.5 max-w-0  rounded-full  bg-darkolivegreen-200 transition-all  duration-500 ease-in-out group-hover:max-w-full"></span>
                     </li>
 
-                    <li className="group font-dinpro-medium capitalize">
-                      About Us{" "}
+                    <li className="group cursor-pointer font-dinpro-medium capitalize duration-200 active:scale-90">
+                      About Us
                       <span className="block h-0.5 max-w-0  rounded-full  bg-black transition-all  duration-500 ease-in-out  group-hover:max-w-full"></span>
                     </li>
                   </ul>
                 </nav>
                 <div className="flex gap-4">
-                  <button className=" rounded-xl border-2 border-darkolivegreen-200 bg-oldlace px-8 pb-3 pt-2 font-dinpro-bold text-2xl text-darkolivegreen-200 transition delay-75 duration-300 ease-in-out hover:-translate-y-0.5  hover:scale-105 hover:border-darkolivegreen-300  hover:text-darkolivegreen-300 ">
+                  <button className=" rounded-xl border-2 border-darkolivegreen-200 bg-oldlace px-8 pb-3 pt-2 font-dinpro-bold text-2xl text-darkolivegreen-200 transition duration-100 ease-in-out hover:-translate-y-0.5  hover:border-darkolivegreen-300 hover:text-darkolivegreen-300  active:scale-90 ">
                     Login
                   </button>
-                  <button className=" rounded-xl bg-darkolivegreen-200  px-8 pb-3 pt-2 font-dinpro-medium  text-2xl text-white transition delay-75 duration-300 ease-in-out  hover:-translate-y-0.5 hover:scale-105  hover:bg-darkolivegreen-300  ">
+                  <button className=" rounded-xl bg-darkolivegreen-200  px-8 pb-3 pt-2 font-dinpro-medium  text-2xl text-white transition delay-75 duration-100 ease-in-out  hover:-translate-y-0.5 hover:bg-darkolivegreen-300  active:scale-90  ">
                     Sign-Up
                   </button>
                 </div>

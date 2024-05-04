@@ -101,7 +101,7 @@ const Banner = ({
             </div>
           </div>
 
-          <button className=" mb-1 mt-2.5 flex scale-90  cursor-pointer  justify-center  overflow-hidden whitespace-nowrap rounded-lg bg-darkolivegreen-200 px-5 py-[18px]  text-center font-inter text-lg font-medium text-white [border:none] hover:bg-seagreen lg:px-[33.5px] lg:text-xl xl:scale-100">
+          <button className=" mb-1 mt-2.5 flex scale-90  cursor-pointer  justify-center  overflow-hidden whitespace-nowrap rounded-lg bg-darkolivegreen-200 px-5 py-[18px]  text-center font-inter text-lg font-medium text-white duration-100 [border:none] hover:bg-seagreen active:scale-95 lg:px-[33.5px] lg:text-xl xl:scale-100">
             Book an Appointment
           </button>
         </div>

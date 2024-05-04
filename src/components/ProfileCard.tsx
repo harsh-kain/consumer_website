@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProfileCard: FunctionComponent = () => {
   return (
-    <div className="relative m-5  box-border flex   max-w-full shrink-0 flex-col items-start gap-[32px]  overflow-hidden rounded-3xl border-[1px] border-solid border-slate-300 bg-oldlace px-7 pb-6 pt-[153px] shadow-[0px_4px_12.5px_rgba(0,_0,_0,_0.07)]">
+    <div className="relative m-5 box-border  flex max-w-full   shrink-0 flex-col items-start gap-[32px] overflow-hidden  rounded-3xl border-[1px] border-solid border-slate-300 bg-oldlace px-7 pb-6 pt-[153px] shadow-[0px_4px_12.5px_rgba(0,_0,_0,_0.07)] duration-300 hover:border-slate-500">
       <div className="flex flex-col items-end  gap-[21px] self-stretch">
         <div className=" relative box-border flex w-[274px]  items-start justify-center px-5 py-0">
           <div className=" flex ">
@@ -89,12 +89,12 @@ const ProfileCard: FunctionComponent = () => {
         <div className="flex flex-1 flex-col  gap-3">
           <Link
             to={"/profile"}
-            className="  w-full min-w-[88px]  cursor-pointer whitespace-nowrap rounded-lg border-[1.5px] border-solid   border-darkolivegreen-200 bg-white px-5 py-[9px] pl-[1.5px]   text-center text-base font-semibold  leading-[20px]  text-darkolivegreen-200    hover:bg-whitesmoke-100"
+            className=" w-full  min-w-[88px] cursor-pointer  whitespace-nowrap rounded-lg border-[1.5px] border-solid border-darkolivegreen-200   bg-white px-5 py-[9px] pl-[1.5px] text-center   text-base font-semibold leading-[20px]  text-darkolivegreen-200 duration-100  hover:bg-whitesmoke-100    active:scale-95"
           >
             View Profile
           </Link>
 
-          <button className=" w-full min-w-[88px] cursor-pointer  whitespace-nowrap rounded-xl bg-darkolivegreen-200 py-[16.5px]  text-center text-base font-semibold  leading-[20px] text-white   hover:bg-seagreen">
+          <button className=" w-full min-w-[88px] cursor-pointer whitespace-nowrap rounded-xl  bg-darkolivegreen-200 py-[16.5px] text-center text-base  font-semibold leading-[20px] text-white  duration-100 hover:bg-seagreen   active:scale-95">
             Book a consultation
           </button>
         </div>
