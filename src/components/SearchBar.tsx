@@ -114,6 +114,7 @@ const SearchBar: FunctionComponent = () => {
                     if (event.key === "Enter") {
                       searchParams.set("name", search);
                       setSearchParams(searchParams);
+                      setSearch("");
                     }
                   }}
                   onChange={(e) => {
@@ -127,6 +128,7 @@ const SearchBar: FunctionComponent = () => {
                   onClick={() => {
                     searchParams.set("name", search);
                     setSearchParams(searchParams);
+                    setSearch("");
                   }}
                 />
               </div>
