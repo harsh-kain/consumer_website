@@ -1,16 +1,62 @@
 import { Fragment, FunctionComponent, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import {
+  Dialog,
+  Disclosure,
+  Menu,
+  Popover,
+  Transition,
+} from "@headlessui/react";
 import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import useFilter from "../hooks/useFilter";
+import { useSearchParams } from "react-router-dom";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+const filters = [
+  {
+    id: "speciality",
+    name: "Expertise",
+    options: [
+      { value: "heart", label: "Heart" },
+      { value: "head", label: "Head" },
+      { value: "skin", label: "Skin" },
+      { value: "bone", label: "Bone" },
+    ],
+  },
+  {
+    id: "gender",
+    name: "Gender",
+    options: [
+      { value: "female", label: "Female" },
+      { value: "male", label: "Male" },
+    ],
+  },
+  {
+    id: "fees",
+    name: "Fees",
+    options: [
+      { value: "0-500", label: "Rs.0 - Rs.500" },
+      { value: "500-1000", label: "Rs.500 - Rs.1000" },
+      { value: "1000-1500", label: "Rs.1000 - Rs.1500" },
+    ],
+  },
+  {
+    id: "languages",
+    name: "Languages",
+    options: [
+      { value: "english", label: "English" },
+      { value: "hindi", label: "Hindi" },
+      { value: "sanskrit", label: "Sanskrit" },
+    ],
+  },
+];
+
 const Filters: FunctionComponent = function () {
   const [open, setOpen] = useState<boolean>(false);
-
-  const { selected, setSelected, filters } = useFilter();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const paramsObject = Object.fromEntries(searchParams);
+  const paramsArray = Object.entries(paramsObject);
 
   return (
     <div>
@@ -128,31 +174,34 @@ const Filters: FunctionComponent = function () {
           <div className="flex w-3/4   flex-wrap items-center justify-between  gap-3  bg-white pb-3  pt-4">
             <Popover.Group className="hidden space-x-6 md:flex md:items-baseline lg:space-x-8">
               {filters.map((section) => (
-                <Popover
+                <Menu
                   as="div"
                   key={section.name}
                   id="desktop-menu"
                   className="relative z-10 inline-block text-left active:border-whitesmoke-100"
                 >
                   <div>
-                    <Popover.Button className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-lg bg-whitesmoke-100 px-2 py-[9px]  text-gray-700 hover:bg-whitesmoke-200 hover:text-gray-900 focus:outline-none lg:gap-8 lg:px-[13px]">
+                    <Menu.Button className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-lg bg-whitesmoke-100 px-2 py-[9px]  text-gray-700 hover:bg-whitesmoke-200 hover:text-gray-900 focus:outline-none lg:gap-8 lg:px-[13px]">
                       <span className=" font-dinpro-medium text-base text-dimgray-300 ">
                         <span>{section.name}</span>
                         <span
-                          className={`ml-1.5 rounded ${selected.map((item) => item.slice(0, item.indexOf("-"))).filter((item) => item === section.id).length ? `bg-stone-300` : `text-transparent`} px-1.5 py-0.5 text-xs font-semibold tabular-nums text-gray-900`}
+                          className={`ml-1.5 rounded  px-1.5 py-0.5 text-xs font-semibold tabular-nums text-gray-900`}
                         >
-                          {
-                            selected
-                              .map((item) => item.slice(0, item.indexOf("-")))
-                              .filter((item) => item === section.id).length
-                          }
+                          {paramsArray
+                            .filter((choice) => choice[0] === section.id)
+                            .at(0)
+                            ?.at(1) ? (
+                            <span className=" text-lg">&#9733;</span>
+                          ) : (
+                            ""
+                          )}
                         </span>
                       </span>
                       <ChevronDownIcon
                         className="ml-1 mr-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-900"
                         aria-hidden="true"
                       />
-                    </Popover.Button>
+                    </Menu.Button>
                   </div>
 
                   <Transition
@@ -164,51 +213,35 @@ const Filters: FunctionComponent = function () {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Popover.Panel className="absolute right-0 mt-2 origin-top-right rounded-md bg-white p-4  shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <form className="space-y-4">
-                        {section.options.map((option, optionIdx) => (
-                          <div
-                            key={option.value}
-                            className="flex items-center "
-                          >
-                            <input
-                              id={`filter-${section.id}-${optionIdx}`}
-                              name={`${section.id}[]`}
-                              defaultValue={option.value}
-                              type="checkbox"
-                              checked={selected.includes(
-                                `${section.id}-${option.label}`,
-                              )}
-                              className="h-4 w-4 rounded border-gray-300 text-amber-900 focus:ring-transparent"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setSelected((selected: string[]) => [
-                                    ...selected,
-                                    `${section.id}-${option.label}`,
-                                  ]);
-                                } else {
-                                  setSelected((selected: string[]) => [
-                                    ...selected.filter(
-                                      (item) =>
-                                        item !==
-                                        `${section.id}-${option.label}`,
-                                    ),
-                                  ]);
-                                }
-                              }}
-                            />
-                            <label
-                              htmlFor={`filter-${section.id}-${optionIdx}`}
-                              className="ml-3 whitespace-nowrap pr-6 font-dinpro-medium  text-sm text-gray-900"
-                            >
-                              {option.label}
-                            </label>
-                          </div>
-                        ))}
-                      </form>
-                    </Popover.Panel>
+                    <Menu.Items className="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded-md bg-white font-dinpro-medium shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      {section.options.map((option) => (
+                        <div key={option.value} className="flex items-center ">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <button
+                                className={classNames(
+                                  active
+                                    ? "bg-whitesmoke-100 text-gray-900"
+                                    : "text-gray-700",
+                                  "block w-full px-4 py-2 text-left text-sm",
+                                )}
+                                onClick={() => {
+                                  searchParams.set(
+                                    `${section.id}`,
+                                    `${option.label}`,
+                                  );
+                                  setSearchParams(searchParams);
+                                }}
+                              >
+                                {option.label}
+                              </button>
+                            )}
+                          </Menu.Item>
+                        </div>
+                      ))}
+                    </Menu.Items>
                   </Transition>
-                </Popover>
+                </Menu>
               ))}
               <Popover
                 as="div"

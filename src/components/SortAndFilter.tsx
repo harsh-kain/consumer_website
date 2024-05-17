@@ -1,9 +1,11 @@
 import { FunctionComponent } from "react";
 import Filters from "./Filters";
-import useFilter from "../hooks/useFilter";
+import { useSearchParams } from "react-router-dom";
 
 const SortAndFilter: FunctionComponent = () => {
-  const { selected, setSelected } = useFilter();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const paramsObject = Object.fromEntries(searchParams);
+  const paramsArray = Object.entries(paramsObject);
 
   return (
     <>
@@ -11,17 +13,20 @@ const SortAndFilter: FunctionComponent = () => {
       {/* Filtered Items */}
       <section className="mt-12 flex max-w-full items-center justify-center">
         <div className="flex w-3/4 flex-wrap justify-end">
-          {selected.map((choice) => (
-            <div className="mx-2 my-2 flex h-[2.813rem] shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-[31px] bg-primary-tint-2 px-5 py-[0.937rem]  text-center font-inter text-[1rem] tracking-[0.5px] text-black  ">
-              <span className="capitalize">
-                {choice.slice(choice.indexOf("-") + 1)}
-              </span>
+          {paramsArray.map((choice, i) => (
+            <div
+              key={i}
+              className="mx-2 my-2 flex h-[2.813rem] shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-[31px] bg-primary-tint-2 px-5 py-[0.937rem]  text-center font-inter text-[1rem] tracking-[0.5px] text-black  "
+            >
+              <span className="capitalize">{choice[1]}</span>
               <button
-                onClick={() =>
-                  setSelected((arr: string[]) =>
-                    arr.filter((item) => item !== choice),
-                  )
-                }
+                onClick={() => {
+                  setSearchParams((prevParams) => {
+                    const newParams = new URLSearchParams(prevParams);
+                    newParams.delete(choice[0]);
+                    return newParams.toString();
+                  });
+                }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

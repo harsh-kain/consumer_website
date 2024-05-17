@@ -3,6 +3,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import AppLayout from "./AppLayout";
+import { ApiProvider } from "@reduxjs/toolkit/query/react";
+import { api } from "./services/api";
 
 const router = createBrowserRouter([
   {
@@ -22,9 +24,9 @@ const router = createBrowserRouter([
 
 const App: FunctionComponent = () => {
   return (
-    <>
+    <ApiProvider api={api}>
       <RouterProvider router={router} />
-    </>
+    </ApiProvider>
   );
 };
 

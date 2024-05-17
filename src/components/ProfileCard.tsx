@@ -1,20 +1,48 @@
-import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
 
-const ProfileCard: FunctionComponent = () => {
+const ProfileCard = ({
+  doctor,
+}: {
+  doctor: {
+    charges: {
+      video_charge: number;
+      chat_charge: number;
+    };
+    first_name: string;
+    image: string;
+    languages: string[];
+    last_name: string;
+    rating: number;
+    speciality: string;
+    title: string;
+    years_of_experience: string;
+  };
+}) => {
+  const {
+    charges: { video_charge, chat_charge },
+    first_name,
+    image,
+    languages,
+    last_name,
+    rating,
+    speciality,
+    title,
+    years_of_experience,
+  } = doctor;
+
   return (
-    <div className="relative m-5 box-border  flex max-w-full   shrink-0 flex-col items-start gap-[32px] overflow-hidden  rounded-3xl border-[1px] border-solid border-slate-300 bg-oldlace px-7 pb-6 pt-[153px] shadow-[0px_4px_12.5px_rgba(0,_0,_0,_0.07)] duration-300 hover:border-slate-500">
+    <div className="relative m-5 box-border  flex w-[350px] max-w-full   shrink-0 flex-col items-start gap-[32px] overflow-hidden  rounded-3xl border-[1px] border-solid border-slate-300 bg-oldlace px-7 pb-6 pt-[153px] shadow-[0px_4px_12.5px_rgba(0,_0,_0,_0.07)] duration-300 hover:border-slate-500">
       <div className="flex flex-col items-end  gap-[21px] self-stretch">
         <div className=" relative box-border flex w-[274px]  items-start justify-center px-5 py-0">
           <div className=" flex ">
             <img
               className="absolute left-[47px] top-[-126px] !m-[0] h-[150px] w-[149px]  rounded-[50%] object-cover"
               alt=""
-              src="/ellipse-725@2x.png"
+              src={image}
             />
             <button className="z-10 flex cursor-pointer  items-start gap-[4px]  overflow-hidden rounded-2xl bg-[transparent] px-3 py-1 [background:linear-gradient(180deg,_#0b0b0b,_rgba(11,_11,_11,_0.79))] [border:none]">
               <div className=" min-w-[22px] pt-0.5  font-dinpro-bold text-base leading-[18px]  text-white">
-                4.5
+                {rating}
               </div>
 
               <img
@@ -26,8 +54,8 @@ const ProfileCard: FunctionComponent = () => {
           </div>
         </div>
         <div className="flex flex-col items-start  gap-[16px] self-stretch">
-          <h1 className="  m-0  text-[32px]  font-bold leading-[28px]  text-darkslategray-300">
-            Dr. Prerna Narang
+          <h1 className=" m-0 line-clamp-2  h-[5.2rem]   text-[32px]  font-bold leading-tight  text-darkslategray-300">
+            {`${title} ${first_name} ${last_name}`}
           </h1>
           <div className="flex flex-col items-center justify-center gap-[16px] self-stretch">
             <div className="flex flex-col items-start  gap-[7px] self-stretch px-[21px] py-0">
@@ -39,7 +67,7 @@ const ProfileCard: FunctionComponent = () => {
                   src="/frame.svg"
                 />
                 <div className="   text-base leading-[20px]  text-dimgray-100">
-                  Male-Female Infertility
+                  {speciality}
                 </div>
               </div>
               <div className="flex  items-center  gap-[7px]">
@@ -49,7 +77,7 @@ const ProfileCard: FunctionComponent = () => {
                   src="/hat.svg"
                 />
                 <div className="   text-base font-semibold leading-[20px]  text-dimgray-100">
-                  7 years of Experience
+                  {`${years_of_experience} years of Experience`}
                 </div>
               </div>
               <div className="flex  items-center  gap-[12px] self-stretch">
@@ -60,7 +88,8 @@ const ProfileCard: FunctionComponent = () => {
                   src="/comment-1@2x.png"
                 />
                 <div className="text-base leading-[20px]  text-dimgray-200">
-                  Speaks: English, Hindi, Marathi
+                  Speaks:{" "}
+                  {languages.length > 0 ? languages.join(", ") : "English"}
                 </div>
               </div>
             </div>
@@ -70,7 +99,7 @@ const ProfileCard: FunctionComponent = () => {
                   Video Consultation
                 </span>
                 <b className=" whitespace-nowrap  text-sm leading-[20px]  text-darkolivegreen-200">
-                  ₹800
+                  {`₹${video_charge}`}
                 </b>
               </div>
               <div className="box-border flex min-w-[104px] flex-1 flex-col items-center  gap-[4px] rounded-lg border-[1px] border-solid border-darkolivegreen-200 bg-oldlace px-[7px] pb-[3px] pt-1.5">
@@ -78,7 +107,7 @@ const ProfileCard: FunctionComponent = () => {
                   Chat Consultation
                 </span>
                 <b className=" whitespace-nowrap  text-sm leading-[20px]  text-darkolivegreen-200">
-                  Free
+                  {chat_charge === 0 ? "Free" : `₹${chat_charge}`}
                 </b>
               </div>
             </div>
