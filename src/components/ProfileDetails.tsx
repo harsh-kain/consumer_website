@@ -1,6 +1,6 @@
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 const ProfileDetails = ({
   languages,
@@ -374,7 +374,10 @@ const ProfileDetails = ({
             ))}
           </div>
           <button className=" mx-8 rounded-xl bg-darkolivegreen-200 py-3 font-inter text-[20px] font-medium capitalize text-white duration-100 hover:bg-darkolivegreen-300 active:scale-95">
-            Make an appointment
+            <NavLink to="/appointment-booking">
+              Make an appointment
+
+            </NavLink>
           </button>
         </div>
       </div>

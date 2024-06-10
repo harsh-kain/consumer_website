@@ -5,7 +5,7 @@ import Profile from "./pages/Profile";
 import AppLayout from "./AppLayout";
 import { ApiProvider } from "@reduxjs/toolkit/query/react";
 import { api } from "./services/api";
-
+import AppointmentBookingPage from './pages/AppointmentBookingPage'
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/appointment-booking",
+        element: <AppointmentBookingPage />,
       },
     ],
   },

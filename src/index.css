@@ -17,55 +17,11 @@
     scrollbar-width: none; /* Firefox */
   }
 }
-
-@font-face {
-  font-family: "DINPro-Black";
-  src:
-    local("DINPro-Black"),
-    url("./assets/fonts/dinpro/DINPro-Black.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "DINPro-Bold";
-  src:
-    local("DINPro-Bold"),
-    url("./assets/fonts/dinpro/DINPro-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "DINPro-Medium";
-  src:
-    local("DINPro-Medium"),
-    url("./assets/fonts/dinpro/DINPro-Medium.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "DINPro-Regular";
-  src:
-    local("DINPro-Regular"),
-    url("./assets/fonts/dinpro/DINPro-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "DINPro-Light";
-  src:
-    local("DINPro-Light"),
-    url("./assets/fonts/dinpro/DINPro-Light.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Gotham-Medium";
-  src:
-    local("Gotham-Medium"),
-    url("./assets/fonts/gotham-rounded/Medium.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "Gotham-Bold";
-  src:
-    local("Gotham-Bold"),
-    url("./assets/fonts/gotham-rounded/Bold.otf") format("opentype");
+*{
+  font-family: "Poppins", sans-serif;
 }
 
 html {
   scrollbar-width: thin;
 }
+
